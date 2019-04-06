@@ -17,6 +17,9 @@ bot.on("message", async message => {
     message.channel.send('( •_•) \n ( ง )ง \n /︶\\ eu e tu...eu e tu ');
     return;
   }
+  if(cmd === `${prefix}vemprofut`) {
+      message.channel.send(`Vem pro fut vem⚽Vem pro fut ⚽#VemProFut ⚽😎O futebol óh⚽tá estralando⚽😎tá pegado ò🤙✌️só tapa👋🤞só tapa de qualidade monstra🦕🐉aí o desafio Thiago Nere🤙🤙⚽é nós👉tamo junto⚽😎sempre🤙✌️lado a lado⚽aí eu tô de seleção⚽a satisfação aqui é total 😎🤙tamo junto⚽Vem`)
+  }
 })
 
 bot.login(botconfig.token);
