@@ -1,0 +1,26 @@
+{
+  "name": "discbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroBarata/discordBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "pedro barata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PedroBarata/discordBot.git/issues"
+  },
+  "homepage": "https://github.com/PedroBarata/discordBot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
