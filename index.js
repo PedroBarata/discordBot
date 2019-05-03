@@ -12,6 +12,9 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
 
+    if(message.content.includes('sushi')) {
+        return message.channel.send(`:sushi:`);
+    }
 
     switch (cmd) {
         case `${prefix}vemtranquilo`:
