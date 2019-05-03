@@ -23,16 +23,16 @@ bot.on("message", async message => {
         case `${prefix}digdon`:
             message.channel.send(`Morre de ré :red_car: :boom: `);
             return;
-        case `sushi`:
+        case cmd.includes(`sushi`):
             message.channel.send(`:sushi:`);
             return;
         case `${prefix}paulao`:
             message.channel.send(`Eu chamei, vcs que não vieram :shrug:`);
-            return; 
-            case `${prefix}padeiro`:
+            return;
+        case `${prefix}padeiro`:
             message.channel.send(`Aqueeela padeirada!`);
             message.channel.send(`https://www.youtube.com/watch?v=-2tZqyhWG4o`);
-            return; 
+            return;
         default:
             return;
     }
