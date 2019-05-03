@@ -11,6 +11,11 @@ bot.on("message", async message => {
     const prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
+
+    if (cmd.includes(`sushi`) || cmd.includes(`SUSHI`)) {
+        return message.channel.send(`:sushi:`);
+    }
+
     switch (cmd) {
         case `${prefix}vemtranquilo`:
             message.channel.send("( •_•) \n ( ง )ง \n /︶\\ vem tranquilo, vem tranquilo...");
@@ -22,9 +27,6 @@ bot.on("message", async message => {
             return;
         case `${prefix}digdon`:
             message.channel.send(`Morre de ré :red_car: :boom: `);
-            return;
-        case cmd.includes(`sushi`):
-            message.channel.send(`:sushi:`);
             return;
         case `${prefix}paulao`:
             message.channel.send(`Eu chamei, vcs que não vieram :shrug:`);
