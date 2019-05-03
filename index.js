@@ -12,9 +12,6 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
 
-    if (cmd.match(`sushi`)) {
-        return message.channel.send(`:sushi:`);
-    }
 
     switch (cmd) {
         case `${prefix}vemtranquilo`:
@@ -35,6 +32,8 @@ bot.on("message", async message => {
             message.channel.send(`Aqueeela padeirada!`);
             message.channel.send(`https://www.youtube.com/watch?v=-2tZqyhWG4o`);
             return;
+        case `${prefix}sushi`:
+            return message.channel.send(`:sushi:`);
         default:
             return;
     }
