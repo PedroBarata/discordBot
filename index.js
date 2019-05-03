@@ -12,7 +12,7 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
 
-    if (cmd.includes(`sushi`) || cmd.includes(`SUSHI`)) {
+    if (cmd.match(`sushi`)) {
         return message.channel.send(`:sushi:`);
     }
 
