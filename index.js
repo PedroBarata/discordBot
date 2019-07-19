@@ -34,7 +34,7 @@ bot.on("message", async message => {
         case `${prefix}sushi`:
             return message.channel.send(`:sushi:`);
         case `${prefix}dejavu`:
-            return message.channel.send(`+ play dejavu`);
+            return message.channel.send(`+play dejavu`);
         default:
             return;
     }
