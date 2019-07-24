@@ -44,7 +44,7 @@ bot.on("message", async message => {
   }
 
   if (cmd === `${prefix}dejavu`) {
-    const channel = bot.channels.get("radio");
+    const channel = bot.channels.get("259754035995738112");
     if (!channel) {
       return console.error("The channel does not exist!");
     }
