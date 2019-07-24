@@ -51,7 +51,7 @@ bot.on("message", async message => {
         .join()
         .then(connection => {
           setTimeout(() => {
-            return message.channel.send("+play dejavu");
+            return message.channel.sendMessage("+play dejavu");
           }, 2000);
         })
         .catch(console.error);
@@ -61,7 +61,7 @@ bot.on("message", async message => {
     //const channel = bot.channels.get("259754035995738112");
 
     if (message.member.voiceChannel) {
-      message.channel.send(":(");
+      message.channel.send(":frowning:");
       message.member.voiceChannel.leave();
     }
   }
