@@ -39,7 +39,7 @@ bot.on("message", async message => {
     message.channel.send(`https://www.youtube.com/watch?v=-2tZqyhWG4o`);
     return;
   }
-  if (msg.content === "sushi") {
+  if (message.content === "sushi") {
     return message.channel.send(":sushi:");
   }
 
