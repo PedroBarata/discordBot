@@ -52,7 +52,7 @@ bot.on("message", async message => {
         .join()
         .then(connection => {
           connection
-            .playStream(YTDL("https://www.youtube.com/watch?v=dv13gl0a-FA"))
+            .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA"))
             // When no packets left to sent leave the channel.
             .on("end", () => {
               console.log("left channel");
