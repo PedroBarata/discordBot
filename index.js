@@ -39,24 +39,20 @@ bot.on("message", async message => {
     message.channel.send(`https://www.youtube.com/watch?v=-2tZqyhWG4o`);
     return;
   }
-  if (message.content.contains("sushi")) {
+  if (cmd === `${prefix}sushi`) {
     return message.channel.send(":sushi:");
   }
 
   if (cmd === `${prefix}dejavu`) {
     //const channel = bot.channels.get("259754035995738112");
-    const channel = message.member.voiceChannel;
-    if (!channel) {
-      return console.error("The channel does not exist!");
-    }
-    channel
-      .join()
+
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
       .then(connection => {
-        return message.channel.send(`+play dejavu`);
+        return message.channel.send("+play dejavu");
       })
-      .catch(e => {
-        console.error(e);
-      });
+      .catch(console.error);
+    }
   }
 });
 
