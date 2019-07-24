@@ -82,10 +82,17 @@ function skip(message) {
 }
 
 function play(connection) {
-  connection.playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", { filter: 'audioonly' }))
-    .on("error", error => {
+  const dispatcher = connection.playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", { 
+    filter: 'audioonly',
+    volume: 0.5
+   }));
+
+   dispatcher.on("error", error => {
       console.error(error);
-    }).setVolume(100);
+    });
+    dispatcher.on('finish', () => {
+      console.log('Finished playing!');
+    });
 }
 
 bot.login(botconfig.token);
