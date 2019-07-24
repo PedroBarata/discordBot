@@ -51,9 +51,9 @@ bot.on("message", async message => {
       message.member.voiceChannel
         .join()
         .then(connection => {
-          let dispatcher = await connection
-            .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA"));
-            console.log(dispatcher);
+          let dispatcher = connection
+            .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA")).then(r => console.log(r));
+            console.log("[disp]", dispatcher);
             // When no packets left to sent leave the channel.
             dispatcher.on("end", () => {
               console.log("left channel");
