@@ -1,6 +1,6 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
-const ytdl = require('ytdl-core');
+const ytdl = require("ytdl-core");
 
 const bot = new Discord.Client({ disableEveryone: true });
 
@@ -51,48 +51,53 @@ bot.on("message", async message => {
       message.member.voiceChannel
         .join()
         .then(connection => {
-          play(connection);
+          play(connection, message);
           return;
         })
         .catch(console.error);
     }
-  }
-  if (cmd === `${prefix}vaza`) {
-    //const channel = bot.channels.get("259754035995738112");
+    if (cmd === `${prefix}vaza`) {
+      //const channel = bot.channels.get("259754035995738112");
 
-    if (message.member.voiceChannel) {
-      message.channel.send(":frowning:");
-      message.member.voiceChannel.leave();
+      if (message.member.voiceChannel) {
+        message.channel.send(":frowning:");
+        message.member.voiceChannel.leave();
+      }
     }
-  }
-  if (
-    message.content.startsWith(
-      `${prefix}skip` || message.content.startsWith(`${prefix}stop`)
-    )
-  ) {
-    skip(message, serverQueue);
-    return;
+    if (
+      message.content.startsWith(
+        `${prefix}skip` || message.content.startsWith(`${prefix}stop`)
+      )
+    ) {
+      skip(message);
+      return;
+    }
   }
 });
 
 function skip(message) {
-  if (!message.member.voiceChannel)
+  const server = message.guild.id;
+  if (!message.member.voiceChannel) {
     return message.channel.send("Não to com vcs carai! :angry:");
-  message.guild.voiceConnection.dispatcher.end();
+  }
+  server.dispatcher.end();
 }
 
-function play(connection) {
-  const dispatcher = connection.playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", { 
-    filter: 'audioonly',
-    volume: 0.5
-   }));
+function play(connection, message) {
+  const server = message.guild.id;
+  server.dispatcher = connection.playStream(
+    ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", {
+      filter: "audioonly"
+    })
+  );
 
-   dispatcher.on("error", error => {
-      console.error(error);
-    });
-    dispatcher.on('finish', () => {
-      console.log('Finished playing!');
-    });
+  server.dispatcher.on("error", error => {
+    console.error(error);
+  });
+  server.dispatcher.on("end", () => {
+    console.error("end!");
+    connection.disconnect();
+  });
 }
 
 bot.login(botconfig.token);
