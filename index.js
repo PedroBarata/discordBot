@@ -51,7 +51,7 @@ bot.on("message", async message => {
     channel
       .join()
       .then(connection => {
-        message.channel.send(`+play dejavu`);
+        return message.channel.send(`+play dejavu`);
       })
       .catch(e => {
         console.error(e);
