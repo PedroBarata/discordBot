@@ -82,9 +82,9 @@ function skip(message, connection) {
   connection.dispatcher.end();
 }
 
-function play(connection) {
-  const dispatcher = connection.playStream(
-    ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", { audioonly: true }),
+async function play(connection) {
+  const dispatcher = connection.playStream(await
+    ytdl( "https://www.youtube.com/watch?v=dv13gl0a-FA", { audioonly: true }),
     { passes: 1 }
   );
 
