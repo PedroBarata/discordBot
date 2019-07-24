@@ -51,10 +51,11 @@ bot.on("message", async message => {
       message.member.voiceChannel
         .join()
         .then(connection => {
-          connection
-            .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA"))
+          let dispatcher = await connection
+            .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA"));
+            console.log(dispatcher);
             // When no packets left to sent leave the channel.
-            .on("end", () => {
+            dispatcher.on("end", () => {
               console.log("left channel");
               connection.channel.leave();
             });
