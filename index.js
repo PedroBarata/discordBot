@@ -83,7 +83,7 @@ function skip(message) {
 
 function play(message) {
   const dispatcher = message.guild.voiceConnection
-    .playStream(ytdl(""))
+    .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA"))
     .on("end", () => {
       message.member.voiceChannel.leave();
     })
