@@ -47,11 +47,22 @@ bot.on("message", async message => {
     //const channel = bot.channels.get("259754035995738112");
 
     if (message.member.voiceChannel) {
-      message.member.voiceChannel.join()
-      .then(connection => {
-        return message.channel.send("+play dejavu");
-      })
-      .catch(console.error);
+      message.member.voiceChannel
+        .join()
+        .then(connection => {
+          setTimeout(() => {
+            return message.channel.send("+play dejavu");
+          }, 2000);
+        })
+        .catch(console.error);
+    }
+  }
+  if (cmd === `${prefix}vaza`) {
+    //const channel = bot.channels.get("259754035995738112");
+
+    if (message.member.voiceChannel) {
+      message.channel.send(":(");
+      message.member.voiceChannel.leave();
     }
   }
 });
