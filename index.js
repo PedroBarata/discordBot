@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
+const ytdl = require('ytdl-core');
 
 const bot = new Discord.Client({ disableEveryone: true });
 
@@ -50,10 +51,8 @@ bot.on("message", async message => {
       message.member.voiceChannel
         .join()
         .then(connection => {
-          setTimeout(() => {
-            play(message);
-            return;
-          }, 2000);
+          play(message);
+          return;
         })
         .catch(console.error);
     }
