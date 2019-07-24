@@ -51,8 +51,15 @@ bot.on("message", async message => {
       message.member.voiceChannel
         .join()
         .then(connection => {
-          play(connection);
-          return;
+          connection
+            .playStream(YTDL("https://www.youtube.com/watch?v=dv13gl0a-FA"))
+            // When no packets left to sent leave the channel.
+            .on("end", () => {
+              console.log("left channel");
+              connection.channel.leave();
+            });
+          //play(connection);
+          // return;
         })
         .catch(console.error);
     }
@@ -83,8 +90,10 @@ function skip(message, connection) {
 }
 
 async function play(connection) {
-  const dispatcher = connection.playStream(await
-    ytdl( "https://www.youtube.com/watch?v=dv13gl0a-FA", { audioonly: true }),
+  const dispatcher = connection.playStream(
+    await ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", {
+      audioonly: true
+    }),
     { passes: 1 }
   );
 
