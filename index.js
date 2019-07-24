@@ -39,12 +39,13 @@ bot.on("message", async message => {
     message.channel.send(`https://www.youtube.com/watch?v=-2tZqyhWG4o`);
     return;
   }
-  if (message.content === "sushi") {
+  if (message.content.includes("sushi")) {
     return message.channel.send(":sushi:");
   }
 
   if (cmd === `${prefix}dejavu`) {
-    const channel = bot.channels.get("259754035995738112");
+    //const channel = bot.channels.get("259754035995738112");
+    const channel = message.member.voiceChannel;
     if (!channel) {
       return console.error("The channel does not exist!");
     }
