@@ -51,7 +51,7 @@ bot.on("message", async message => {
       message.member.voiceChannel
         .join()
         .then(connection => {
-          play(message);
+          play(connection);
           return;
         })
         .catch(console.error);
@@ -81,13 +81,11 @@ function skip(message) {
   message.guild.voiceConnection.dispatcher.end();
 }
 
-function play(message) {
-  const dispatcher = message.guild.voiceConnection
-    .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA"))
+function play(connection) {
+  connection.playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", { filter: 'audioonly' }))
     .on("error", error => {
       console.error(error);
-    });
-  dispatcher.setVolumeLogarithmic(100);
+    }).setVolume(100);
 }
 
 bot.login(botconfig.token);
