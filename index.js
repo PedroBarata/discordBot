@@ -84,10 +84,8 @@ function skip(message, connection) {
 
 function play(connection) {
   const dispatcher = connection.playStream(
-    ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", {
-      filter: "audioonly",
-      volume: 0.5
-    })
+    ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", { audioonly: true }),
+    { passes: 1 }
   );
 
   dispatcher.on("error", error => {
@@ -98,7 +96,7 @@ function play(connection) {
     setTimeout(() => {
       console.error("end!");
       connection.disconnect();
-    }, 1000);
+    }, 200);
   });
 }
 
