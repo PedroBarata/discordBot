@@ -51,7 +51,8 @@ bot.on("message", async message => {
         .join()
         .then(connection => {
           setTimeout(() => {
-            return message.channel.sendMessage("+play dejavu");
+            play(message);
+            return;
           }, 2000);
         })
         .catch(console.error);
@@ -65,6 +66,32 @@ bot.on("message", async message => {
       message.member.voiceChannel.leave();
     }
   }
+  if (
+    message.content.startsWith(
+      `${prefix}skip` || message.content.startsWith(`${prefix}stop`)
+    )
+  ) {
+    skip(message, serverQueue);
+    return;
+  }
 });
+
+function skip(message) {
+  if (!message.member.voiceChannel)
+    return message.channel.send("Não to com vcs carai! :angry:");
+  message.guild.voiceConnection.dispatcher.end();
+}
+
+function play(message) {
+  const dispatcher = message.guild.voiceConnection
+    .playStream(ytdl(""))
+    .on("end", () => {
+      message.member.voiceChannel.leave();
+    })
+    .on("error", error => {
+      console.error(error);
+    });
+  dispatcher.setVolumeLogarithmic(100);
+}
 
 bot.login(botconfig.token);
