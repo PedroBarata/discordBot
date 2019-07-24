@@ -92,9 +92,12 @@ function play(connection) {
   dispatcher.on("error", error => {
     console.error(error);
   });
+
   dispatcher.on("end", () => {
-    console.error("end!");
-    connection.disconnect();
+    setTimeout(() => {
+      console.error("end!");
+      connection.disconnect();
+    }, 200);
   });
 }
 
