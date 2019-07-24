@@ -85,7 +85,8 @@ function skip(message, connection) {
 function play(connection) {
   const dispatcher = connection.playStream(
     ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", {
-      filter: "audioonly"
+      filter: "audioonly",
+      volume: 0.5
     })
   );
 
@@ -97,7 +98,7 @@ function play(connection) {
     setTimeout(() => {
       console.error("end!");
       connection.disconnect();
-    }, 200);
+    }, 1000);
   });
 }
 
