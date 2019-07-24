@@ -51,7 +51,7 @@ bot.on("message", async message => {
       message.member.voiceChannel
         .join()
         .then(connection => {
-          play(connection, message);
+          play(connection);
           return;
         })
         .catch(console.error);
@@ -69,32 +69,30 @@ bot.on("message", async message => {
         `${prefix}skip` || message.content.startsWith(`${prefix}stop`)
       )
     ) {
-      skip(message);
+      skip(message, connection);
       return;
     }
   }
 });
 
-function skip(message) {
-  const server = message.guild.id;
+function skip(message, connection) {
   if (!message.member.voiceChannel) {
     return message.channel.send("Não to com vcs carai! :angry:");
   }
-  server.dispatcher.end();
+  connection.dispatcher.end();
 }
 
-function play(connection, message) {
-  const server = message.guild.id;
-  server.dispatcher = connection.playStream(
+function play(connection) {
+  const dispatcher = connection.playStream(
     ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", {
       filter: "audioonly"
     })
   );
 
-  server.dispatcher.on("error", error => {
+  dispatcher.on("error", error => {
     console.error(error);
   });
-  server.dispatcher.on("end", () => {
+  dispatcher.on("end", () => {
     console.error("end!");
     connection.disconnect();
   });
