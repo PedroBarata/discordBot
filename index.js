@@ -43,6 +43,9 @@ bot.on("message", async message => {
   if (cmd === `${prefix}sushi`) {
     return message.channel.send(":sushi:");
   }
+  if(cmd === `${prefix}thaiga`)  {
+    return message.channel.send("http://www.dicionarioolimpico.com.br/uploads/cenarios/c3969ab673019d5572faff62231ad90c.jpg")
+  }
 
   if (cmd === `${prefix}dejavu`) {
     //const channel = bot.channels.get("259754035995738112");
