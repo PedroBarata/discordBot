@@ -44,7 +44,7 @@ bot.on("message", async message => {
     return message.channel.send(":sushi:");
   }
   if(cmd === `${prefix}thaiga`)  {
-    return message.channel.send("http://www.dicionarioolimpico.com.br/uploads/cenarios/c3969ab673019d5572faff62231ad90c.jpg")
+    return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/604098334847926282/unknown.png")
   }
 
   if (cmd === `${prefix}dejavu`) {
