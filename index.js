@@ -47,6 +47,14 @@ bot.on("message", async message => {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/604098334847926282/unknown.png")
   }
 
+  if(cmd === `${prefix}poppeiro`)  {
+    return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/615033907708166144/unknown.png")
+  }
+
+   if(cmd === `${prefix}choroDeRe`)  {
+    return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/615711631376384031/unknown.png")
+  }
+
   if (cmd === `${prefix}dejavu`) {
     //const channel = bot.channels.get("259754035995738112");
 
