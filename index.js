@@ -1,6 +1,5 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
-const ytdl = require("ytdl-core");
 
 const bot = new Discord.Client({ disableEveryone: true });
 
@@ -55,70 +54,6 @@ bot.on("message", async message => {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/615711631376384031/unknown.png")
   }
 
-  if (cmd === `${prefix}dejavu`) {
-    //const channel = bot.channels.get("259754035995738112");
-
-    if (message.member.voiceChannel) {
-      message.member.voiceChannel
-        .join()
-        .then(connection => {
-          let dispatcher = connection
-            .playStream(ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA"));
-            console.log("[disp]", dispatcher);
-            // When no packets left to sent leave the channel.
-            dispatcher.on("end", () => {
-              console.log("left channel");
-              connection.channel.leave();
-            });
-          //play(connection);
-          // return;
-        })
-        .catch(console.error);
-    }
-    if (cmd === `${prefix}vaza`) {
-      //const channel = bot.channels.get("259754035995738112");
-
-      if (message.member.voiceChannel) {
-        message.channel.send(":frowning:");
-        message.member.voiceChannel.leave();
-      }
-    }
-    if (
-      message.content.startsWith(
-        `${prefix}skip` || message.content.startsWith(`${prefix}stop`)
-      )
-    ) {
-      skip(message, connection);
-      return;
-    }
-  }
 });
-
-function skip(message, connection) {
-  if (!message.member.voiceChannel) {
-    return message.channel.send("Não to com vcs carai! :angry:");
-  }
-  connection.dispatcher.end();
-}
-
-async function play(connection) {
-  const dispatcher = connection.playStream(
-    await ytdl("https://www.youtube.com/watch?v=dv13gl0a-FA", {
-      audioonly: true
-    }),
-    { passes: 1 }
-  );
-
-  dispatcher.on("error", error => {
-    console.error(error);
-  });
-
-  dispatcher.on("end", () => {
-    setTimeout(() => {
-      console.error("end!");
-      connection.disconnect();
-    }, 200);
-  });
-}
 
 bot.login(botconfig.token);
