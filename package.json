@@ -22,9 +22,6 @@
   },
   "homepage": "https://github.com/PedroBarata/discordBot#readme",
   "dependencies": {
-    "discord.js": "^11.4.2",
-    "ffmpeg-binaries": "^4.0.0",
-    "node-opus": "^0.3.2",
-    "opusscript": "0.0.6"
+    "discord.js": "^11.4.2"
   }
 }
