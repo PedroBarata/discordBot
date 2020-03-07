@@ -42,16 +42,20 @@ bot.on("message", async message => {
   if (cmd === `${prefix}sushi`) {
     return message.channel.send(":sushi:");
   }
-  if(cmd === `${prefix}thaiga`)  {
+  if (cmd === `${prefix}thaiga`) {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/604098334847926282/unknown.png")
   }
 
-  if(cmd === `${prefix}poppeiro`)  {
+  if (cmd === `${prefix}poppeiro`) {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/615033907708166144/unknown.png")
   }
 
-   if(cmd === `${prefix}choroDeRe`)  {
+  if (cmd === `${prefix}choroDeRe`) {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/615711631376384031/unknown.png")
+  }
+
+  if (cmd === `${prefix}padeiro2`) {
+    return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/685676589681606805/unknown.png")
   }
 
 });
