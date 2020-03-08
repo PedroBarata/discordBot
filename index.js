@@ -57,6 +57,9 @@ bot.on("message", async message => {
   if (cmd === `${prefix}padeiro2`) {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/685676589681606805/unknown.png")
   }
+  if (cmd === `${prefix}paulao2`) {
+    return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/685955532258803787/unknown.png")
+  }
 
 });
 
