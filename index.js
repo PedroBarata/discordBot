@@ -60,6 +60,9 @@ bot.on("message", async message => {
   if (cmd === `${prefix}paulao2`) {
     return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/685955532258803787/unknown.png")
   }
+  if (cmd === `${prefix}paulao3`) {
+    return message.channel.send("Mas eu sou XERIFE :cowboy:")
+  }
 
 });
 
