@@ -71,20 +71,20 @@ bot.on("message", async message => {
   }
   if (cmd === `${prefix}help`)
     return message.channel.send(`
-  ${prefix}vemTranquilo \n
-  ${prefix}vemProFut \n
-  ${prefix}digdon \n
-  ${prefix}paulao \n
-  ${prefix}paulao2 \n
-  ${prefix}paulao3 \n
-  ${prefix}paulao4 \n
-  ${prefix}padeiro \n
-  ${prefix}padeiro2 \n
-  ${prefix}barata \n
-  ${prefix}poppeiro \n
-  ${prefix}thaiga \n
-  ${prefix}choroDeRe \n
-  ${prefix}sushi \n
+  ${prefix}vemTranquilo
+  ${prefix}vemProFut
+  ${prefix}digdon
+  ${prefix}paulao
+  ${prefix}paulao2
+  ${prefix}paulao3
+  ${prefix}paulao4
+  ${prefix}padeiro
+  ${prefix}padeiro2
+  ${prefix}barata
+  ${prefix}poppeiro
+  ${prefix}thaiga
+  ${prefix}choroDeRe
+  ${prefix}sushi
   `);
 });
 
