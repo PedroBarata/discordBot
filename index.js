@@ -12,7 +12,7 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
 
-  if (cmd === `${prefix}vemtranquilo`) {
+  if (cmd === `${prefix}vemTranquilo`) {
     message.channel.send(
       "( •_•) \n ( ง )ง \n /︶\\ vem tranquilo, vem tranquilo..."
     );
@@ -22,7 +22,7 @@ bot.on("message", async message => {
     message.channel.send("( •_•) \n ( ง )ง \n /︶\\ eu e tu...eu e tu ");
     return;
   }
-  if (cmd === `${prefix}vemprofut`) {
+  if (cmd === `${prefix}vemProFut`) {
     message.channel.send(
       `Vem pro fut vem⚽Vem pro fut ⚽#VemProFut ⚽😎O futebol óh⚽tá estralando⚽😎tá pegado ò🤙✌️só tapa👋🤞só tapa de qualidade monstra🦕🐉aí o desafio Thiago Nere🤙🤙⚽é nós👉tamo junto⚽😎sempre🤙✌️lado a lado⚽aí eu tô de seleção⚽a satisfação aqui é total 😎🤙tamo junto⚽Vem`
     );
@@ -63,10 +63,29 @@ bot.on("message", async message => {
   if (cmd === `${prefix}paulao3`) {
     return message.channel.send("Mas eu sou XERIFE :cowboy: :star:")
   }
+  if (cmd === `${prefix}paulao4`) {
+    return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/731961668699029524/unknown.png")
+  }
   if (cmd === `${prefix}barata`) {
     return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/711011326209818645/unknown.png")
   }
-
+  if (cmd === `${prefix}help`)
+    return message.channel.send(`
+  ${prefix}vemTranquilo \n
+  ${prefix}vemProFut \n
+  ${prefix}digdon \n
+  ${prefix}paulao \n
+  ${prefix}paulao2 \n
+  ${prefix}paulao3 \n
+  ${prefix}paulao4 \n
+  ${prefix}padeiro \n
+  ${prefix}padeiro2 \n
+  ${prefix}barata \n
+  ${prefix}poppeiro \n
+  ${prefix}thaiga \n
+  ${prefix}choroDeRe \n
+  ${prefix}sushi \n
+  `);
 });
 
 bot.login(process.env.BOT_TOKEN);
