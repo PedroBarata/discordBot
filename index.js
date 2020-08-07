@@ -69,6 +69,10 @@ bot.on("message", async message => {
   if (cmd === `${prefix}barata`) {
     return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/711011326209818645/unknown.png")
   }
+  if(cmd === `${prefix}bosca`) {
+    return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/738590924023791637/unknown.png")
+  }
+
   if (cmd === `${prefix}help`)
     return message.channel.send(`
   ${prefix}vemTranquilo
@@ -85,6 +89,7 @@ bot.on("message", async message => {
   ${prefix}thaiga
   ${prefix}choroDeRe
   ${prefix}sushi
+  ${prefix}bosca
   `);
 });
 
