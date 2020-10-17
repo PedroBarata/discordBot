@@ -72,8 +72,8 @@ bot.on("message", async message => {
   if(cmd === `${prefix}bosca`) {
     return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/738590924023791637/unknown.png")
   }
-  if(cmd === `<3`) {
-    return message.channel.send("<3")
+  if(cmd === `:heart:`) {
+    return message.channel.send(":heart:")
   }
   if(cmd === `${prefix}alpinista`) {
     return message.channel.send("sob construção... :thinking:")
