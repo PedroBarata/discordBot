@@ -69,17 +69,23 @@ bot.on("message", async message => {
   if (cmd === `${prefix}barata`) {
     return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/711011326209818645/unknown.png")
   }
-  if(cmd === `${prefix}bosca`) {
+  if (cmd === `${prefix}bosca`) {
     return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/738590924023791637/unknown.png")
   }
-  if(cmd === `:heart:`) {
+  if (cmd === `:heart:`) {
     return message.channel.send(":heart:")
   }
-  if(cmd === `${prefix}alpinista`) {
+  if (cmd === `${prefix}alpinista`) {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/767149747848478750/unknown.png")
   }
-  if(cmd === `${prefix}alpinista2`) {
+  if (cmd === `${prefix}alpinista2`) {
     return message.channel.send("https://cdn.discordapp.com/attachments/257651525453611009/767159522434875412/unknown.png")
+  }
+  if (cmd === `${prefix}temCarburador`) {
+    return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/774046691887415337/unknown.png")
+  }
+  if (cmd === `${prefix}naoTemCarburador`) {
+    return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/774046845076897822/unknown.png")
   }
   if (cmd === `${prefix}help`)
     return message.channel.send(`
@@ -100,6 +106,8 @@ bot.on("message", async message => {
   ${prefix}bosca
   ${prefix}alpinista
   ${prefix}alpinista2
+  ${prefix}temCarburador
+  ${prefix}naoTemCarburador
   `);
 });
 
