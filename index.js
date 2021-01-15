@@ -87,6 +87,12 @@ bot.on("message", async message => {
   if (cmd === `${prefix}naoTemCarburador`) {
     return message.channel.send("https://media.discordapp.net/attachments/257651525453611009/774046845076897822/unknown.png")
   }
+  if(cmd === `${prefix}lucastere`) {
+    message.channel.send(`Lucastere apavorando streamer`);
+    message.channel.send("https://clips.twitch.tv/TubularObedientClamPanicVis");
+    return;
+  }
+  
   if (cmd === `${prefix}help`)
     return message.channel.send(`
   ${prefix}vemTranquilo
@@ -98,6 +104,7 @@ bot.on("message", async message => {
   ${prefix}paulao4
   ${prefix}padeiro
   ${prefix}padeiro2
+  ${prefix}lucastere
   ${prefix}barata
   ${prefix}poppeiro
   ${prefix}thaiga
